@@ -10,19 +10,6 @@ La aplicación está organizada de la siguiente manera:
 - FormProducts.tsx: componente que contiene un formulario para agregar nuevos productos, utilizando un hook personalizado (useForm) para gestionar los valores del formulario.
 - ListProducts.tsx: componente que muestra los productos en un formato de tarjeta utilizando Card de React-Bootstrap.
 
-## Instalación
-
-Instala las dependencias:
-
-bash
-Copiar código
-npm install
-Inicia la aplicación:
-
-bash
-Copiar código
-npm start
-
 ## Funcionamiento de la Aplicación
 
 ### 1. Agregar un Producto
