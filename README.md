@@ -1,50 +1,38 @@
-# React + TypeScript + Vite
+# Introduccion React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto es una introducción a React y TypeScript. Implementa una aplicación simple para manejar una lista de productos, utilizando conceptos clave como componentes, hooks (useState y useForm), y la biblioteca React-Bootstrap para los estilos.
 
-Currently, two official plugins are available:
+## Estructura del Proyecto
+La aplicación está organizada de la siguiente manera:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- App.tsx: el componente principal que renderiza AppProduct, que gestiona el flujo de agregar y mostrar productos.
+- AppProduct.tsx: componente que incluye el formulario para agregar productos (FormProducts) y el listado de productos (ListProducts).
+- FormProducts.tsx: componente que contiene un formulario para agregar nuevos productos, utilizando un hook personalizado (useForm) para gestionar los valores del formulario.
+- ListProducts.tsx: componente que muestra los productos en un formato de tarjeta utilizando Card de React-Bootstrap.
 
-## Expanding the ESLint configuration
+## Instalación
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Instala las dependencias:
 
-- Configure the top-level `parserOptions` property like this:
+bash
+Copiar código
+npm install
+Inicia la aplicación:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+bash
+Copiar código
+npm start
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Funcionamiento de la Aplicación
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+### 1. Agregar un Producto
+El componente FormProducts permite al usuario ingresar el nombre, imagen (URL), y precio de un producto. Al hacer clic en el botón Enviar producto, los datos del formulario se pasan al componente AppProduct mediante la función handleAddProduct, que actualiza el estado de la lista de productos.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+### 2. Visualizar Productos
+El componente ListProducts recibe la lista de productos desde AppProduct y los muestra en una cuadrícula de tarjetas. Cada tarjeta contiene el nombre, precio, e imagen del producto.
+
+## Tecnologías Utilizadas
+
+- **React** y **TypeScript** para la lógica de la aplicación y el tipado estático.
+- **React-Bootstrap** para el diseño y estilo de componentes.
+- **Hooks** de React (`useState`) y un hook personalizado (`useForm`).
